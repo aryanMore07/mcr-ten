@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import { reducerFunction } from "../reducers/reducerFunction";
 import { inventoryData } from "../data/data";
 
@@ -6,8 +6,11 @@ export const ProductContext = createContext();
 
 export function ProductProvider({ children }) {
 
+    const data = localStorage.getItem('allData');
+    const presistData = data ? JSON.parse(data) : inventoryData
+
     const [state, dispatch] = useReducer(reducerFunction, {
-        productsData: inventoryData,
+        productsData: presistData,
         departmentInput: '',
         lowerStockInput: '',
         productNameInput: '',
@@ -22,6 +25,10 @@ export function ProductProvider({ children }) {
     const priceFilter = state.productNameInput === 'Price' ? nameFilter.sort((a, b) => a.price - b.price) : nameFilter;
 
     const stockFilter = state.productNameInput === 'Stock' ? priceFilter.sort((a, b) => a.stock - b.stock) : priceFilter;
+
+    useEffect(() => {
+        localStorage.setItem('allData', JSON.stringify(state.productsData))
+    }, [state]);
 
     return <ProductContext.Provider value={{ state, dispatch, stockFilter }}>{children}</ProductContext.Provider>
 }   

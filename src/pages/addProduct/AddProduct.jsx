@@ -3,9 +3,11 @@ import './addProduct.css';
 import { Button } from '@mui/material';
 import { ProductContext } from '../../contexts/productContext';
 import { v4 as uuid } from 'uuid';
+import { useNavigate } from 'react-router';
 
 function AddProduct() {
 
+    const navigate = useNavigate();
     const { dispatch } = useContext(ProductContext);
 
     const [departmentInput, setDepartmentInput] = useState('');
@@ -43,6 +45,7 @@ function AddProduct() {
             imageUrl: imageInput,
         }
         dispatch({type: 'ADD_PRODUCT', payload: productDetails})
+        navigate('/products');
     }
 
     return (
@@ -97,8 +100,9 @@ function AddProduct() {
                 }} />
             </div>
             <div>
-                <Button varient='outlined' onClick={resetHandler}>Reset</Button>
-                <Button varient='contained' onClick={addProductHandler}>Add product</Button>
+                <Button variant='outlined' onClick={resetHandler}>Reset</Button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <Button variant='contained' onClick={addProductHandler}>Add product</Button>
             </div>
         </div>
     )

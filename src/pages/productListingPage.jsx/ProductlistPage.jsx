@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 
 function ProductlistPage() {
 
-    const { dispatch, stockFilter } = useContext(ProductContext);
+    const { state, dispatch, stockFilter } = useContext(ProductContext);
 
     return (
         <div className='product-listing-page'>
@@ -15,13 +15,13 @@ function ProductlistPage() {
                 <select name="departments" id="departments" onChange={(event) => {
                     dispatch({type: 'DEPARTMENT_INPUT', payload: event.target.value});
                 }}>
-                    <option value="Kitchen">Kitchen</option>
-                    <option value="Clothing">Clothing</option>
-                    <option value="Toys">Toys</option>
+                    <option selected={state.departmentInput === 'Kitchen'} value="Kitchen">Kitchen</option>
+                    <option selected={state.departmentInput === 'Clothing'} value="Clothing">Clothing</option>
+                    <option selected={state.departmentInput === 'Toys'} value="Toys">Toys</option>
                 </select>
 
                 <label htmlFor="low-stock">
-                    <input type="checkbox" onChange={(event) => {
+                    <input selected={state.lowerStockInput === 'on'} type="checkbox" onChange={(event) => {
                         dispatch({type: 'CHECKBOX_INPUT', payload: event.target.value})
                     }} />
                     Low stock
