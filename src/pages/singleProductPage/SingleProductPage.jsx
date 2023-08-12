@@ -18,7 +18,7 @@ function SingleProductPage() {
         <>
             <h2 className='heading' onClick={() => {
                 navigate('/products');
-            }}> <span> <ArrowBackIcon /> </span> {name}</h2>
+            }}> <span style={{cursor: "pointer"}}> <ArrowBackIcon /> </span> {name}</h2>
             <div className='single-product-div'>
                 <div className='product_img'>
                     <img src={imageUrl} alt={name} className='img' />

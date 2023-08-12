@@ -10,7 +10,7 @@ function AddProduct() {
     const navigate = useNavigate();
     const { dispatch } = useContext(ProductContext);
 
-    const [departmentInput, setDepartmentInput] = useState('');
+    const [departmentInput, setDepartmentInput] = useState('Kitchen');
     const [nameInput, setNameInput] = useState('');
     const [decriptionInput, setDescriptionInput] = useState('');
     const [priceInput, setPriceInput] = useState('');
@@ -30,7 +30,7 @@ function AddProduct() {
         setDeliveredInput("")
         setImageInput("")
     }
-
+    
     function addProductHandler() {
         const productDetails = {
             id: uuid(),
@@ -39,12 +39,12 @@ function AddProduct() {
             description: decriptionInput,
             price: priceInput,
             stock: stockInput,
-            sku:skuInput,
+            sku: skuInput,
             supplier: supplierInput,
             delivered: deliveredInput,
             imageUrl: imageInput,
         }
-        dispatch({type: 'ADD_PRODUCT', payload: productDetails})
+        dispatch({ type: 'ADD_PRODUCT', payload: productDetails })
         navigate('/products');
     }
 
@@ -58,7 +58,7 @@ function AddProduct() {
                 <select className='input' name="departments" id="departments" value={departmentInput} placeholder='Select Department' onChange={(event) => {
                     setDepartmentInput(event.target.value)
                 }}>
-                    <option value='Kitchen'>Kitchen</option>
+                    <option selected value='Kitchen'>Kitchen</option>
                     <option value='Clothing'>Clothing</option>
                     <option value='Toys'>Toys</option>
                 </select>
