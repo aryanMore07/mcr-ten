@@ -34,7 +34,7 @@ function AddProduct() {
     function addProductHandler() {
         const productDetails = {
             id: uuid(),
-            department: decriptionInput,
+            department: departmentInput,
             name: nameInput,
             description: decriptionInput,
             price: priceInput,
