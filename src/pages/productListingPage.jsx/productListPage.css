@@ -1,0 +1,51 @@
+/* Default styles for mobile devices */
+th {
+  background-color: #f0f0f0;
+}
+
+.product-img {
+  width: 150px;
+  height: 150px;
+}
+
+.filter-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  th {
+    background-color: #f0f0f0;
+  }
+
+  .product-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .filter-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  th {
+    background-color: #f0f0f0;
+  }
+
+  .product-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .filter-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}

@@ -1,0 +1,52 @@
+/* Default styles for mobile devices */
+.dashboard-div {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.data-div {
+  height: max-content;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: max-content;
+  padding: 25px;
+  margin: 25px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .dashboard-div {
+    height: 100vh;
+    display: flex;
+  }
+
+  .data-div {
+    height: max-content;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: max-content;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 15px;
+    text-align: center;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .dashboard-div {
+    height: 100vh;
+    display: flex;
+  }
+
+  .data-div {
+    height: max-content;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: max-content;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 15px;
+    text-align: center;
+  }
+}

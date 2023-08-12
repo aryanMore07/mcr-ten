@@ -1,0 +1,30 @@
+/* Default styles for mobile devices */
+.department-div {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  width: max-content;
+  font-size: 20px;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .department-div {
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    width: max-content;
+    font-size: 20px;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .department-div {
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    width: max-content;
+    font-size: 20px;
+  }
+}

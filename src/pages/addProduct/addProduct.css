@@ -1,0 +1,19 @@
+.add_product_div {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.input {
+    margin: 1rem 0px 1rem 0px;
+    width: 75%;
+    height: 45px;
+    font-size: 25px;
+}
